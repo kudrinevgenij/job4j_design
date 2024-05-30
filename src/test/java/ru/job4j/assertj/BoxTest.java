@@ -41,13 +41,15 @@ class BoxTest {
     @Test
     void whenSphereEdge5ThenArea314() {
         Box box = new Box(0, 5);
-        assertThat(box.getArea()).isEqualTo(314d, withPrecision(0.2d));
+        assertThat(box.getArea()).isEqualTo(314d, withPrecision(0.2d))
+                                .isBetween(314d, 314.2);
     }
 
     @Test
     void whenCubeEdge5ThenArea150() {
         Box box = new Box(8, 5);
-        assertThat(box.getArea()).isEqualTo(150);
+        assertThat(box.getArea()).isNotZero()
+                                .isEqualTo(150);
     }
 
 }
