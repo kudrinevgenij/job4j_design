@@ -26,7 +26,7 @@ class SimpleConvertTest {
         SimpleConvert simpleConvert = new SimpleConvert();
         List<String> list = simpleConvert.toList("first", "second", "three", "four", "five");
         assertThat(list).hasSize(5)
-                .contains("first","second")
+                .contains("first", "second")
                 .contains("three", Index.atIndex(2))
                 .allSatisfy(e -> assertThat(e.length()).isGreaterThan(3));
     }
@@ -37,7 +37,7 @@ class SimpleConvertTest {
         Set<String> set = simpleConvert.toSet("first", "second", "three");
         assertThat(set).isNotEmpty()
                 .hasSize(3)
-                .contains("first","second")
+                .contains("first", "second")
                 .allMatch(e -> e.length() < 10);
 
     }
