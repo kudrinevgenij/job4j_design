@@ -8,7 +8,7 @@ class BackwardArrayIteratorTest {
 
     @Test
     void whenMultiCallHasNextThenTrue() {
-        BackwardArrayIterator iterator = new BackwardArrayIterator(
+        ArrayIterator.BackwardArrayIterator iterator = new ArrayIterator.BackwardArrayIterator(
                 new int[] {1, 2, 3, 4}
         );
         assertThat(iterator.hasNext()).isTrue();
@@ -20,7 +20,7 @@ class BackwardArrayIteratorTest {
 
     @Test
     void whenMultiCallHasNextThenNext() {
-        BackwardArrayIterator iterator = new BackwardArrayIterator(
+        ArrayIterator.BackwardArrayIterator iterator = new ArrayIterator.BackwardArrayIterator(
                 new int[] {1, 2, 3}
         );
         assertThat(iterator.hasNext()).isTrue();
@@ -32,7 +32,7 @@ class BackwardArrayIteratorTest {
 
     @Test
     void whenReadSequence() {
-        BackwardArrayIterator iterator = new BackwardArrayIterator(
+        ArrayIterator.BackwardArrayIterator iterator = new ArrayIterator.BackwardArrayIterator(
                 new int[] {1, 2, 3}
         );
         assertThat(iterator.next()).isEqualTo(3);
@@ -43,7 +43,7 @@ class BackwardArrayIteratorTest {
 
     @Test
     void whenNextFromEmpty() {
-        BackwardArrayIterator iterator = new BackwardArrayIterator(
+        ArrayIterator.BackwardArrayIterator iterator = new ArrayIterator.BackwardArrayIterator(
                 new int[] {}
         );
         assertThatThrownBy(iterator::next)
