@@ -32,9 +32,9 @@ public class FlatMap<T> implements Iterator<T> {
     public static void main(String[] args) {
         Iterator<Integer> empty = Collections.emptyIterator();
         Iterator<Iterator<Integer>> data = List.of(
-                empty,
-                empty,
-                empty
+                List.of(1, 2, 3).iterator(),
+                List.of(4, 5, 6).iterator(),
+                List.of(7, 8, 9).iterator()
         ).iterator();
         FlatMap flat = new FlatMap(data);
         while (flat.hasNext()) {
