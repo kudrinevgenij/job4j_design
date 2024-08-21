@@ -9,14 +9,12 @@ public class EvenNumberFile {
             StringBuilder text = new StringBuilder();
             int read;
             while ((read = input.read()) != -1) {
-                if (read == 10 || read == 13) {
-                    System.out.print(text.charAt(text.length() - 1) % 2 == 0);
-                    System.out.print((char) read);
-                } else {
-                    text.append((char) read);
-                }
+                text.append((char) read);
             }
-            System.out.println(text.charAt(text.length() - 1) % 2 == 0);
+            String[] str = text.toString().split(System.lineSeparator());
+            for (String s : str) {
+                System.out.println(Integer.valueOf(s) % 2 == 0);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
