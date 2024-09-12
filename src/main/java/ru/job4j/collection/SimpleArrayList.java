@@ -6,8 +6,8 @@ public class SimpleArrayList<T> implements SimpleList<T> {
 
     private T[] container;
     private int size;
-    int modCount;
-    int expectedModCount;
+    private int modCount;
+    private int expectedModCount;
 
     public SimpleArrayList(int capacity) {
         container = (T[]) new Object[capacity];
@@ -53,7 +53,7 @@ public class SimpleArrayList<T> implements SimpleList<T> {
         return this.size;
     }
 
-    void grow() {
+    private void grow() {
         T[] newContainer = (T[]) new Object[container.length * 2 + 1];
         System.arraycopy(container, 0, newContainer, 0, container.length);
         container = newContainer;
