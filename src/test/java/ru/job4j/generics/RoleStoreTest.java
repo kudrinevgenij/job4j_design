@@ -13,7 +13,7 @@ class RoleStoreTest {
     @Test
     void whenAddAndFindThenManager() {
         Store<Role> store = new RoleStore();
-        store.add(new Role("1","manager"));
+        store.add(new Role("1", "manager"));
         assertThat(store.findById("1").getRoleName()).isEqualTo("manager");
     }
 
