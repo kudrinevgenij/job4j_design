@@ -13,7 +13,7 @@ public class EchoServer {
                              new InputStreamReader(socket.getInputStream()))) {
                     output.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
                     String in = input.readLine();
-                    if (in.contains("GET /?msg=Bye")) {
+                    if (in.contains("?msg=Bye")) {
                         server.close();
                         System.out.println(in);
                     }
