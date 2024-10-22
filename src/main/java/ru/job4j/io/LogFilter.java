@@ -17,11 +17,11 @@ public class LogFilter {
         List<String> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("data/log.txt"))) {
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-                if (line.contains(" 404 ")) {
+                String[] splitLine = line.split(" ");
+                if ("404".equals(splitLine[splitLine.length - 2])) {
                     result.add(line);
                 }
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
